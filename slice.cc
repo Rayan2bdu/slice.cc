@@ -19,7 +19,7 @@ NS_LOG_COMPONENT_DEFINE("NetworkSlicingDemo");
 int main(int argc, char *argv[])
 {
     // Simulation parameters
-    double simTime = 1.0; // seconds
+    double simTime = 1.0; // sekunder
     double centralFrequency = 28e9; // 28 GHz
     double bandwidth = 100e6; // 100 MHz
     uint16_t numerology = 2;  //numerology
@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
     // Create nodes
     NodeContainer gNbNodes;
     NodeContainer ueNodes;
-    gNbNodes.Create(1); //we will have 1 gnb
-    ueNodes.Create(6); // Now 6 UEs,, 2 mobile and 4 static
+    gNbNodes.Create(1); //we will have ett gnb
+    ueNodes.Create(6); // Now 6 UEs, 2 mobile and 4 static
 
     // Setup mobility - Mixed mobility for different UE types
     MobilityHelper mobility;
