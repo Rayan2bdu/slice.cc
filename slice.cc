@@ -1,13 +1,3 @@
-/*In this network slicing simulation, I designed and implemented a comprehensive 5G scenario with six different user equipment (UE) types, each representing distinct 5G use cases. First, I configured the basic simulation parameters including a 10-second duration, 28 GHz carrier frequency, and 100 MHz bandwidth using numerology 2. The core setup involved creating one gNodeB and six UEs with mixed mobility patterns - the IndustrialRobot and AutonomousDrone were configured with mobile movement using RandomWalk2D mobility model, while the 8KVideo, VRHeadset, SmartMeter, and WeatherSensor remained static at fixed positions.
-
-I implemented the 5G-LENA module architecture by setting up the essential helpers: NrHelper for the overall 5G stack, IdealBeamformingHelper for beam management, and NrPointToPointEpcHelper for the core network. The spectrum configuration was crucial - I used CcBwpCreator to define the operation band and extracted bandwidth parts for device installation. For realistic channel conditions, I configured the 3GPP UMi model with the NrChannelHelper, disabling shadowing effects to focus on the core network slicing performance.
-
-The network slicing implementation was achieved through dedicated EPS bearers with specific QoS profiles. I assigned URLLC bearers with GBR_CONV_VOICE to the mobile IndustrialRobot and AutonomousDrone for ultra-reliable low-latency communication. For the high-throughput applications, I configured eMBB bearers with NGBR_VIDEO_TCP_DEFAULT for 8KVideo and VRHeadset. The IoT devices, SmartMeter and WeatherSensor, received mMTC bearers using NGBR_MC_DELAY_SIGNAL for massive machine-type communications.
-
-To generate realistic traffic patterns, I implemented UDP applications with distinct characteristics for each slice type. The URLLC UEs were configured with small packets (80-100 bytes) at high frequency (0.5-1ms intervals), eMBB UEs used large packets (1200-1400 bytes) with very short intervals (0.1-0.2ms) for high throughput, while mMTC UEs transmitted very small packets (30-40 bytes) infrequently (1-2 second intervals). Finally, I integrated comprehensive flow monitoring to collect and analyze performance metrics including throughput, latency, and packet loss for each device and slice type, providing clear insights into how network slicing effectively isolates and serves diverse 5G application requirements.*/
-
-//Lets add essential libraries for simulation
-// network_slicing_demo.cc
 #include <ns3/core-module.h>
 #include <ns3/network-module.h>
 #include <ns3/mobility-module.h>
